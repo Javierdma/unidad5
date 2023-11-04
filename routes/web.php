@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,5 @@ Route::get('/hola/{name}/{lastname?}', function (string $name, ?string $lastname
 Route::get('/saludo/{name}', function (string $name) {
     return view('example',['name'=>$name]);
 })->where(['name'=>'[a-z]+']);
+Route::get('/user', [UserController::class, 'index']) 
+->where(['name'=>'[a-z]+']);
